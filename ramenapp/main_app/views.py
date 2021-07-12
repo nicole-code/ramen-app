@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 def home(request):
     return render(request, 'home.html')
 
-def login(request):
+def loginuser(request):
     return render(request, 'registration/login.html')
 
 def userprofile(request):
@@ -17,10 +17,11 @@ def signup(request):
     error_message = ''
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
+        print(form.errors)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')
+            return redirect('home')
         else:
             error_message = 'Invalid sign up - try again'
     form = UserCreationForm()
