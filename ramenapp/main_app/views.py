@@ -28,3 +28,5 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
+def buildramen(request):
+    
