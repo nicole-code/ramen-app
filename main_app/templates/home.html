@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Hey. Send Noods</h1>
+<h1>Build-A-Ramen Community</h1>
+
+{% for ramen in ramens %}
+
+<div class="card">
+  <a href="/{{ ramens.id }}"></a>
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="">
+  </div>
+  <div id="front" class="card-content">
+    <span id="title" class="card-title activator grey-text text-darken-4">{{ plant.name }}</span>
+    <hr/>
+    <p><b>Brand:</b> {{ ramens.brand }}</p>
+  </div>
+  </div>
+</div>
+
+{% endfor %}
+
 
 {% endblock %}
