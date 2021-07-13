@@ -19,7 +19,7 @@
         </ul>
         <ul class="right">
             {% if user.is_authenticated %}
-            <li><a href="/userprofile.html">My Ramen</a></li>
+            <li><a href="/userprofile">My Ramen</a></li>
             <li><a href="/buildramen">Build A Ramen</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
