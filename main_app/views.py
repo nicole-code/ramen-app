@@ -2,11 +2,17 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-# from .models import Profile
+
+
+from .models import Ramen
+from .models import Ingredient
+from .models import Profile
+
 
 # Define the home view
 def home(request):
-    return render(request, 'home.html')
+    ramens =Ramen.objects.all()
+    return render(request, 'home.html', {'ramens':ramens})
 
 def loginuser(request):
     return render(request, 'registration/login.html')
@@ -42,5 +48,10 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
+<<<<<<< HEAD
 
+=======
+def buildramen(request):
+    return render(request, 'buildramen.html') 
+>>>>>>> main
 
