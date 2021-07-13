@@ -3,10 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
-
 from .models import Ramen
 from .models import Ingredient
-from .models import Profile
+
 
 
 # Define the home view
@@ -48,10 +47,6 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-<<<<<<< HEAD
-
-=======
 def buildramen(request):
     return render(request, 'buildramen.html') 
->>>>>>> main
 
