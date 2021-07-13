@@ -51,8 +51,8 @@ def buildramen_new(request):
 #view to handle incoming form data 
 def buildramen_create(request):
     ramen = Ramen.object.create(
-        name = request.Post['name'],
-        brand = request.Post['brand'],
+        name=request.Post['name'],
+        brand=request.Post['brand'],
         # ingredient = request.Post['ingredient']
     )
     return redirect(f'/ramenbuild/{ramen.id}')
