@@ -3,9 +3,8 @@ from django.contrib.auth.models import User
 
 class Ramen(models.Model):
     brand = models.CharField(max_length=100)
-    flavour = models.CharField(max_length=100)
-    spice = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    Ingredient = models.ManyToManyField(Ingredient)
     def __str__(self):
         return self.name
 
@@ -14,11 +13,5 @@ class Ingredient(models.Model):
     def __str__(self):
         return self.name
 
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    email = models.CharField(max_length=100)    
-    def __str__(self):
-        return self.name
 
     
