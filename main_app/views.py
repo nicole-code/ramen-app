@@ -5,11 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 
 from .models import Ramen
 from .models import Ingredient
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 748104008e7da903feb7d48ab1edb8c3914236aa
 
 # Define the home view
 def home(request):
@@ -24,9 +19,6 @@ def user_profile(request):
 
 def edit_profile(request):
     return render(request, 'usereditprofile.html')
-
-def build_ramen(request):
-    return render(request, 'buildramen.html')
 
 def signup(request):
     error_message = ''
@@ -43,9 +35,6 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-
-<<<<<<< HEAD
-=======
 # def user_update_form(request, profile_id):
 #     print("update form")
 #     profile = Profile.objects.get(id=profile_id)
@@ -55,7 +44,15 @@ def signup(request):
 #     print("hello")
 #     return redirect(f'/userprofile/{profile.id}')
 
->>>>>>> 748104008e7da903feb7d48ab1edb8c3914236aa
-def buildramen(request):
-    return render(request, 'buildramen.html') 
+#view to show the build form
+def buildramen_new(request):
+    return render(request, 'buildramen/new.html') 
 
+#view to handle incoming form data 
+def buildramen_create(request):
+    ramen = Ramen.object.create(
+        name = request.Post['name'],
+        brand = request.Post['brand'],
+        # ingredient = request.Post['ingredient']
+    )
+    return redirect(f'/ramenbuild/{ramen.id}')
