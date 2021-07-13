@@ -6,31 +6,23 @@ from django.contrib.auth.forms import UserCreationForm
 
 from .models import Ramen
 from .models import Ingredient
-from .models import Profile
-
 
 # Define the home view
 def home(request):
     ramens =Ramen.objects.all()
     return render(request, 'home.html', {'ramens':ramens})
 
-def loginuser(request):
+def login_user(request):
     return render(request, 'registration/login.html')
 
-def userprofile(request):
+def user_profile(request):
     return render(request, 'userprofile.html')
 
 def edit_profile(request):
     return render(request, 'usereditprofile.html')
 
-# def user_update_form(request, profile_id):
-#     print("update form")
-#     profile = Profile.objects.get(id=profile_id)
-#     profile.user = request.POST['user']
-#     profile.email = request.POST['email']
-#     profile.save()
-#     print("hello")
-#     return redirect(f'/userprofile/{profile.id}')
+def build_ramen(request):
+    return render(request, 'buildramen.html')
 
 def signup(request):
     error_message = ''
@@ -48,10 +40,15 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-<<<<<<< HEAD
+# def user_update_form(request, profile_id):
+#     print("update form")
+#     profile = Profile.objects.get(id=profile_id)
+#     profile.user = request.POST['user']
+#     profile.email = request.POST['email']
+#     profile.save()
+#     print("hello")
+#     return redirect(f'/userprofile/{profile.id}')
 
-=======
 def buildramen(request):
     return render(request, 'buildramen.html') 
->>>>>>> main
 
