@@ -12,6 +12,8 @@ class Ingredient(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    profile_pic = models.ImageField(null=True, blank=True)
     email = models.CharField(max_length=100)    
 
     
