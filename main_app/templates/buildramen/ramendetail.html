@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="ramenbowl">RAMEN BOWL PICTURE HERE</div>
+
+<h1>hi I'm Built</h1> 
+
+<img src="">
+
+    Ramen Nickname: {{ ramen.name }}
+    <br/>
+    Brand: {{ ramen.brand }}
+    <hr/>
+    Ingredients: Some kind of code invoking ingredients as buttons.
+    <br/>
+    <br/>
+    <div id="editdelete">
+        <a href="/buildramen/{{ramen.id}}/delete/">Delete</a>
+        <a href="/buildramen/{{ramen.id}}/edit/">Edit</a>
+      </div>
+
+
+{% endblock %}

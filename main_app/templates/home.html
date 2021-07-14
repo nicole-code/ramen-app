@@ -3,19 +3,19 @@
 
 <h1>Build-A-Ramen Community</h1>
 
-{% for ramen in ramens %}
+{% for r in ramens %}
 
 <div class="card">
-  <a href="/{{ ramens.id }}"></a>
+  <a href="community/{{ r.id }}">
   <div class="card-image waves-effect waves-block waves-light">
     <img class="activator" src="">
   </div>
   <div id="front" class="card-content">
-    <span id="title" class="card-title activator grey-text text-darken-4">{{ plant.name }}</span>
+    <span id="title" class="card-title activator grey-text text-darken-4">{{ r.name }}</span>
     <hr/>
-    <p><b>Brand:</b> {{ ramens.brand }}</p>
   </div>
   </div>
+</a>
 </div>
 
 {% endfor %}
