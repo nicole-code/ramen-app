@@ -11,7 +11,6 @@ urlpatterns = [
     path('post/', views.buildramen_create, name='buildramen_create' ),
     path('buildramen/<int:ramen_id>/', views.ramendetail, name= 'ramendetail'),
     path('buildramen/<int:ramen_id>/delete/', views.ramen_delete, name='ramendelete'),
-    # path('usereditprofile/', views.edit_profile, name='edit_profile'),
-    # path('updateuser/<int:profile_id>/', views.user_update_form),
+    path('userprofile/<int:ramen_id>/delete/', views.user_ramen_delete, name='user_ramen_delete')
 
 ]

@@ -18,10 +18,8 @@ def login_user(request):
     return render(request, 'registration/login.html')
 
 def user_profile(request):
-    return render(request, 'userprofile.html')
-
-def edit_profile(request):
-    return render(request, 'usereditprofile.html')
+    ramens = Ramen.objects.filter(user=request.user)
+    return render(request, 'user/userprofile.html', { 'ramens': ramens })
 
 def signup(request):
     error_message = ''
@@ -38,14 +36,6 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-# def user_update_form(request, profile_id):
-#     print("update form")
-#     profile = Profile.objects.get(id=profile_id)
-#     profile.user = request.POST['user']
-#     profile.email = request.POST['email']
-#     profile.save()
-#     print("hello")
-#     return redirect(f'/userprofile/{profile.id}')
 
 #view to show the build form
 def buildramen_new(request):
@@ -72,4 +62,9 @@ def ramen_delete(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
     ramen.delete()
     return redirect('home')
+
+def user_ramen_delete(request, ramen_id):
+    ramen = Ramen.objects.get(id=ramen_id)
+    ramen.delete()
+    return redirect('user')
 
