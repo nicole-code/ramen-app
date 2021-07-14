@@ -3,13 +3,16 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Ramen
-from .models import Ingredient
+from .models import Ramen, Ingredient
 
 # Define the home view
 def home(request):
     ramens =Ramen.objects.all()
     return render(request, 'home.html', {'ramens':ramens})
+
+def communitydetail(request, ramen_id):
+    ramen = Ramen.objects.get(id=ramen_id)
+    return render(request, 'community/communitydetail.html', {'ramen': ramen})    
 
 def login_user(request):
     return render(request, 'registration/login.html')
@@ -48,11 +51,25 @@ def signup(request):
 def buildramen_new(request):
     return render(request, 'buildramen/new.html') 
 
-#view to handle incoming form data 
+#view to handle incoming form data
+
 def buildramen_create(request):
-    ramen = Ramen.object.create(
-        name=request.Post['name'],
-        brand=request.Post['brand'],
-        # ingredient = request.Post['ingredient']
+    print(request.POST)
+    ramen = Ramen.objects.create(
+        name=request.POST['name'],
+        brand=request.POST['brand'],
+        # ingredient=request.POST['ingredient'],
+        user=request.user,
     )
-    return redirect(f'/ramenbuild/{ramen.id}')
+    print(ramen)
+    return redirect(f'/buildramen/{ramen.id}')
+
+def ramendetail(request, ramen_id):
+    ramen = Ramen.objects.get(id=ramen_id)
+    return render(request, 'buildramen/ramendetail.html', {'ramen': ramen})
+
+def ramen_delete(request, ramen_id):
+    ramen = Ramen.objects.get(id=ramen_id)
+    ramen.delete()
+    return redirect('home')
+
