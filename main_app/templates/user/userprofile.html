@@ -3,43 +3,53 @@
 
 <!-- USER PROFILE -->
 
-    <div class="user-container">
-        <div class="user-profile">
-            <div class="user-image">
-                <div class="user-image-container">
-                    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
-                <div class="user-content">
-                    {{ user.username }}   
+<div class="container">
+<center><div class="user-card" style="width: 20rem;">
+    <img class="rounded-circle z-depth-2" alt="10x10" src="">
+    <div class="card-body">
+      <h5 class="user-title">{{ user.username }}</h5>
+      <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+  </div>
+  </center>
+
+
+
+
+    <h3 class="ramen-head-title">What I've Made</h3>
+        <hr>
+        <br>
+    <div class="row">
+        {% for r in ramens %}
+            <div class="col col-sm">
+                <div class="card">
+                    <a href="/userprofile/{{ r.id }}">
+                        <img class="card-image rounded-circle" src="">
+                            <div class="card-content">
+                                <div class="card-title">
+                                    {{ r.name }}
+                                    <hr/>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
+    
 
 
 
-
-    <div class="ramen-container">
-        <h3>What I've Made!!</h3>
-
-
-
-
-        {% for r in ramens %}
-
-        <div class="card">
-          <a href="/userprofile/{{ r.id }}">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="">
-          </div>
-          <div id="front" class="card-content">
-            <span id="title" class="card-title activator grey-text text-darken-4">{{ r.name }}</span>
-            <hr/>
-          </div>
-          </div>
-        </a>
-        </div>
-
-        {% endfor %}   
-            
+       
 
 {% endblock %}
+
+
+
+
