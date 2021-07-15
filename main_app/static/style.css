@@ -1,3 +1,17 @@
+body {
+    font-family: 'Fredoka One', cursive;
+}
+
+.page-footer {
+    background-color: #FCBF49 !important;
+}
+
+.nav-wrapper {
+    background-color: #FCBF49;
+}
+
+
+
 /* The switch - the box around the slider */
 .switch {
     position: relative;

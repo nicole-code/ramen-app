@@ -6,6 +6,9 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Ramen, Ingredient
 
 # Define the home view
+def about(request):
+    return render(request, 'about.html')
+
 def home(request):
     ramens =Ramen.objects.all()
     return render(request, 'home.html', {'ramens':ramens})
@@ -58,15 +61,6 @@ def signup(request):
 def buildramen_new(request):
     return render(request, 'buildramen/new.html') 
 
-#view to handle incoming form data
-def assoc_toy(request, cat_id, toy_id):
-  # Note that you can pass a toy's id instead of the whole object
-  Ramen.objects.get(id=ramen_id).ingredient.add(ingredient_id)
-  return redirect('detail', cat_id=cat_id)
-# merge the ingredient post to the create post so it happens at once, fix/merge urls as well.
-
-def assoc_ingredient(request):
-    pass
 
 def buildramen_create(request):
     ramen = Ramen.objects.create(
