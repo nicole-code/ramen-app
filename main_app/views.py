@@ -9,9 +9,9 @@ from .models import Ramen, Ingredient
 def home(request):
     return render(request, 'home.html')
 
-def community_home(request):
+def hub(request):
     ramens =Ramen.objects.all()
-    return render(request, 'community/communityhome.html', {'ramens':ramens})
+    return render(request, 'community/hub.html', {'ramens':ramens})
 
 def communitydetail(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
@@ -123,11 +123,11 @@ def buildramen_create(request):
     return redirect(f'/userprofile/{ramen.id}')
 
 
-
 def ramendetail(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
     ramen.ingredient.all(ingredient_id)
     return render(request, 'buildramen/ramendetail.html', {'ramen': ramen})
+
 
 def ramen_delete(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
