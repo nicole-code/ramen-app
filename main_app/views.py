@@ -59,17 +59,67 @@ def signup(request):
 
 #view to show the build form
 def buildramen_new(request):
-    return render(request, 'buildramen/new.html') 
+    ingredients = Ingredient.objects.all()
+    return render(request, 'buildramen/new.html', {'ingredients': ingredients}) 
 
 
 def buildramen_create(request):
+    print('LOOK OVER HERE', request.POST)
     ramen = Ramen.objects.create(
         name=request.POST['name'],
         brand=request.POST['brand'],
-        # ingredient=request.POST['name'],
+        # ingredient=request.POST['ingredient'],
         user=request.user,
     )
-    # Ramen.objects.get(id=ramen_id).ingredient.add(ingredient_id)
+    if 'Chicken' in request.POST:
+        ingredient_id = request.POST['Chicken']
+        print("HEY I AM THE VALUE OF chicken KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id)    
+    if 'Egg' in request.POST:
+        ingredient_id = request.POST['Egg']
+        print("HEY I AM THE VALUE OF egg KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id) 
+    if 'Green Onion' in request.POST:  
+        ingredient_id = request.POST['Green Onion']
+        print("HEY I AM THE VALUE OF green onion KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id) 
+    if 'Nori' in request.POST:  
+        ingredient_id = request.POST['Nori']
+        print("HEY I AM THE VALUE OF nori KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id) 
+    if 'Pork Belly' in request.POST:  
+        ingredient_id = request.POST['Pork Belly']
+        print("HEY I AM THE VALUE OF pork belly KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id)     
+    if 'Corn' in request.POST:  
+        ingredient_id = request.POST['Corn']
+        print("HEY I AM THE VALUE OF corn KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id) 
+    if 'Naruto' in request.POST:  
+        ingredient_id = request.POST['Naruto']
+        print("HEY I AM THE VALUE OF naruto KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id)  
+    if 'Mushroom' in request.POST:  
+        ingredient_id = request.POST['Mushroom']
+        print("HEY I AM THE VALUE OF mushroom KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id) 
+    if 'Bean Sprouts' in request.POST:  
+        ingredient_id = request.POST['Bean Sprouts']
+        print("HEY I AM THE VALUE OF bean sprouts KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id)  
+    if 'Tofu' in request.POST:  
+        ingredient_id = request.POST['Tofu']
+        print("HEY I AM THE VALUE OF tofu KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id)
+    if 'Pepper' in request.POST:  
+        ingredient_id = request.POST['Pepper']
+        print("HEY I AM THE VALUE OF pepper KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id)
+    if 'Fish Ball' in request.POST:
+        ingredient_id = request.POST['Fish Ball']
+        print("HEY I AM THE VALUE OF fish ball KEY", ingredient_id)
+        ramen.ingredient.add(ingredient_id)                          
+    
     return redirect(f'/buildramen/{ramen.id}')
 
 
