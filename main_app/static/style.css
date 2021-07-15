@@ -13,17 +13,18 @@ body {
 /* Build a ramen bowl images */
 
 #bowl {
-    position: absolute;
-    margin-left: 326px;
+    display: flex;
     margin-top: 100px;
-    filter: drop-shadow((0px 5px 5px) 
-    );
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 10px 10px rgb(0, 0, 0, 0.5));
 }
 
 #title {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    margin-top: 30rem;
+    margin-top: 2rem;
 }
 
 #form {
@@ -31,7 +32,9 @@ body {
     flex-direction: column;
 }
 
-
+#thumb {
+    filter: drop-shadow(0 10px 10px rgb(0, 0, 0, 0.5));    
+}
 /* The switch - the box around the slider */
 .switch {
     position: relative;
