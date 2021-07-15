@@ -22,10 +22,10 @@
 </div>
 
 <div id="form">
-<form method="POST" action="/post/">
+<form method="POST" action="/post/" autocomplete="off">
     {% csrf_token %}
-    Name: <input name="name">
-    Ramen: <input name="brand"> 
+    Give Your Ramen A Nickname: <input name="name">
+    Tell Us What Instant Ramen Brand You're Using: <input name="brand"> 
     <!-- needs input name ="brand" -->
     <hr/>
 

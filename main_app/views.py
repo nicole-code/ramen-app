@@ -26,7 +26,8 @@ def user_profile(request):
 
 def user_ramen_detail(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
-    return render(request, 'user/userdetail.html', {'ramen': ramen})  
+    all_ramen_ingredients = ramen.ingredient.all()
+    return render(request, 'user/userdetail.html', {'ramen': ramen, 'all_ramen_ingredients': all_ramen_ingredients})  
 
 def user_ramen_edit(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
@@ -68,7 +69,6 @@ def buildramen_create(request):
     ramen = Ramen.objects.create(
         name=request.POST['name'],
         brand=request.POST['brand'],
-        # ingredient=request.POST['ingredient'],
         user=request.user,
     )
     if 'Chicken' in request.POST:
@@ -121,6 +121,13 @@ def buildramen_create(request):
         ramen.ingredient.add(ingredient_id)                          
     
     return redirect(f'/userprofile/{ramen.id}')
+
+
+def ramendetail(request, ramen_id):
+    ramen = Ramen.objects.get(id=ramen_id)
+    ramen.ingredient.all(ingredient_id)
+    return render(request, 'buildramen/ramendetail.html', {'ramen': ramen})
+
 
 def ramen_delete(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
