@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div id="ramenbowl">RAMEN BOWL PICTURE HERE</div>
-
-<h1>hi build me </h1> 
-
+<img id='bowl' src="../../static/image/RedRamenBlackBowl.png" width='373' height='373'>
 <img src="">
-<!-- hidden jpgs will be layered here -->
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
 
+<div id="title">
+<h1>Create-A-Ramen!</h1> 
+</div>
+
+<div id="form">
 <form method="POST" action="/post/">
     {% csrf_token %}
     Name: <input name="name">
@@ -19,8 +31,10 @@
     Ingredients: 
     <br/>
     <div class="ingredients">
+
         {% for i in ingredients %}
         <img src='{{ i.img }}' width='125' height="125">
+
         <label class="switch">
             <input type="checkbox" name='{{ i.name }}' value='{{ i.id }}'>
             <span class="slider round">{{ i.name }}</span>
@@ -31,7 +45,7 @@
     <br/>
     <button type="submit">Save-A-Ramen</button>
 </form>
-
+</div>
 
 
 {% endblock %}
