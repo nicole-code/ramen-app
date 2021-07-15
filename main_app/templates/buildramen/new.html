@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div id="ramenbowl">RAMEN BOWL PICTURE HERE</div>
-
-<h1>hi build me </h1> 
-
+<img id='bowl' src="../../static/image/RedRamenBlackBowl.png" width='373' height='373'>
 <img src="">
-<!-- hidden jpgs will be layered here -->
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
+<img src="">
 
+<div id="title">
+<h1>Create-A-Ramen!</h1> 
+</div>
+
+<div id="form">
 <form method="POST" action="/post/">
     {% csrf_token %}
     Name: <input name="name">
@@ -42,7 +54,7 @@
         </label>
         <img src='../static/image/placeholder.png' width='125' height="125">
         <label class="switch">
-            <input type="checkbox" name="Green Onion" value="Pork Belly">
+            <input type="checkbox" name="Pork Belly" value="Pork Belly">
             <span class="slider round">Pork Belly</span>
           </label>
         <img src='../static/image/placeholder.png' width='125' height="125">
@@ -86,7 +98,7 @@
     <br/>
     <button type="submit">Save-A-Ramen</button>
 </form>
-
+</div>
 
 
 {% endblock %}

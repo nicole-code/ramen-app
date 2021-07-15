@@ -10,6 +10,26 @@ body {
     background-color: #FCBF49;
 }
 
+/* Build a ramen bowl images */
+
+#bowl {
+    position: absolute;
+    margin-left: 326px;
+    margin-top: 100px;
+    filter: drop-shadow((0px 5px 5px) 
+    );
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rem;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* The switch - the box around the slider */
