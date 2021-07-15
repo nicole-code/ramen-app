@@ -31,10 +31,12 @@
     Ingredients: 
     <br/>
     <div class="ingredients">
+
         
         {% for i in ingredients %}
         
         <img id='thumb' src='{{i.img}}' width='125' height="125">
+
         <label class="switch">
             <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
             <span class="slider round">{{i.name}}</span>
