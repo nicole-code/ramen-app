@@ -10,7 +10,7 @@ body {
 #headerimage {
     display: flex !important;
     width: 100% !important;
-    
+    align-items: ;
 }
 
 main {
@@ -41,6 +41,10 @@ main {
     margin-right: auto;
     filter: drop-shadow(0 10px 10px rgb(0, 0, 0, 0.5));
 }
+
+#ramenbuild {
+    position: relative;
+}  
 
 #title {
     text-align: center;
@@ -118,37 +122,4 @@ input:checked + .slider:before {
   
 .slider.round:before {
     border-radius: 50%;
-}
-
-.ramen-head-title {
-    text-align: center;
-}
-
-.card {
-    border-radius: 5px;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 10px 15px 50px 0 rgba(0, 0, 0, 0.09);
-  }
-
-.user-card {
-    align-items: center;
-}
-
-.card-content {
-    padding: 2em 1.4em;
-    background-color: #fff;
-    border-radius: 2px;
-  }
-  
-.card-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1em;
-  }
-
-.user-title {
-    text-align: center;
 }
