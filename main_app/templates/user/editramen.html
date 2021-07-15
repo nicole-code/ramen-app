@@ -10,8 +10,10 @@
 
 <form method="POST" action="/edit/{{ ramen.id }}">
     {% csrf_token %}
+
     Your Ramen's Name: <input name="name" value="{{ ramen.name }}">
     Your Instant Ramen Base: <input name="brand" value="{{ramen.brand}}"> 
+
     <hr/>
 
 
