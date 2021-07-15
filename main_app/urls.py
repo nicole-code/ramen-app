@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('community/communityhome', views.community_home, name='chome'),
-    path('community/<int:ramen_id>/', views.communitydetail, name= 'communitydetail'),
+    path('community/community/<int:ramen_id>/', views.communitydetail, name= 'communitydetail'),
     path('login/', views.login_user, name='login'),
     path('userprofile/', views.user_profile, name='user'),
     path('userprofile/<int:ramen_id>/', views.user_ramen_detail, name= 'userdetail'),
