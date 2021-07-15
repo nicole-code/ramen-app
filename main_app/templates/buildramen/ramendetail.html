@@ -11,7 +11,16 @@
     <br/>
     Brand: {{ ramen.brand }}
     <hr/>
-    Ingredients: Some kind of code invoking ingredients as buttons.
+    <h3>Ingredients</h3>
+
+      {% for i in ramen.ingredients.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              {{ i.name }}
+            </span>
+          </div>
+        </div>
     <br/>
     <br/>
     <div id="editdelete">
@@ -19,5 +28,6 @@
         <a href="/buildramen/{{ramen.id}}/edit/">Edit</a>
       </div>
 
+{% endfor %}  
 
 {% endblock %}

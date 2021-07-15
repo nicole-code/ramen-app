@@ -21,34 +21,25 @@
     <div class="ramen-container">
         <h3>What I've Made!!</h3>
 
-        <div class="ramen-content">
-            <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                View All
-              </button> -->
-            <div class="collapse" id="collapseExample">
-              {% for ramen in ramens %}  
-              <div class="ramen-card-body">
-                <div class="ramen-card-image">
-                    <div class="ramen-card-name">
-                        {{ ramen.name }}
-                            <div class="ramen-card-brand">
-                                {{ ramen.brand }}
-                                    <div class="ramen-card-ingredients">
-                                        "Ingredients go here"
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="edit-delete-btn">
-                                    <a href="/userprofile/{{ramen.id}}/delete/">Delete</a>
-                                    <a href="/buildramen/{{ramen.id}}/edit/">Edit</a>
-                                  </div>
-                                </br>
-                             </div>
-                         </div>
-                      {% endfor %}   
-                    </div>
-                </div>
-            </div>
 
+
+
+        {% for r in ramens %}
+
+        <div class="card">
+          <a href="/userprofile/{{ r.id }}">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="">
+          </div>
+          <div id="front" class="card-content">
+            <span id="title" class="card-title activator grey-text text-darken-4">{{ r.name }}</span>
+            <hr/>
+          </div>
+          </div>
+        </a>
+        </div>
+
+        {% endfor %}   
+            
 
 {% endblock %}

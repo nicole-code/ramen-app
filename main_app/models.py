@@ -15,10 +15,9 @@ class Ingredient(models.Model):
 class Ramen(models.Model):
     name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
-    #     choices = BRANDS,
-    # )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # ingredient = models.ManyToManyField(Ingredient)
+    ingredient = models.ManyToManyField(Ingredient)
+    
     def __str__(self):
         return self.name
 
