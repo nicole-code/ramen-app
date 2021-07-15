@@ -21,6 +21,23 @@ def user_profile(request):
     ramens = Ramen.objects.filter(user=request.user)
     return render(request, 'user/userprofile.html', { 'ramens': ramens })
 
+def user_ramen_detail(request, ramen_id):
+    ramen = Ramen.objects.get(id=ramen_id)
+    return render(request, 'user/userdetail.html', {'ramen': ramen})  
+
+def user_ramen_edit(request, ramen_id):
+    ramen = Ramen.objects.get(id=ramen_id)
+    return render(request, 'user/editramen.html', {'ramen': ramen}) 
+
+def user_ramen_update(request, ramen_id):
+    print('RAMEN RAMEN RAMEN RAMEN RAMEN RAMEN RAMEN')
+    ramen = Ramen.objects.get(id=ramen_id)
+    ramen.name = request.POST['name']
+    ramen.brand = request.POST['brand']
+    # ADD INGREDIENTS UPDATE HERE
+    ramen.save()
+    return redirect('home') 
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
@@ -42,20 +59,31 @@ def buildramen_new(request):
     return render(request, 'buildramen/new.html') 
 
 #view to handle incoming form data
+def assoc_toy(request, cat_id, toy_id):
+  # Note that you can pass a toy's id instead of the whole object
+  Ramen.objects.get(id=ramen_id).ingredient.add(ingredient_id)
+  return redirect('detail', cat_id=cat_id)
+# merge the ingredient post to the create post so it happens at once, fix/merge urls as well.
+
+def assoc_ingredient(request):
+    pass
 
 def buildramen_create(request):
-    print(request.POST)
     ramen = Ramen.objects.create(
         name=request.POST['name'],
         brand=request.POST['brand'],
-        # ingredient=request.POST['ingredient'],
+        # ingredient=request.POST['name'],
         user=request.user,
     )
-    print(ramen)
+    # Ramen.objects.get(id=ramen_id).ingredient.add(ingredient_id)
     return redirect(f'/buildramen/{ramen.id}')
+
+
 
 def ramendetail(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
+    # ingredient = Ingredient.objects.get(id=ingredient_id)
+    # ramen.ingredient.add(ingredient)
     return render(request, 'buildramen/ramendetail.html', {'ramen': ramen})
 
 def ramen_delete(request, ramen_id):

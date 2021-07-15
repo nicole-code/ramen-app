@@ -8,11 +8,10 @@
 <img src="">
 <!-- hidden jpgs will be layered here -->
 
-<form method="POST" action="/post/">
+<form method="POST" action="/edit/{{ ramen.id }}">
     {% csrf_token %}
-    Name: <input name="name">
-    Ramen: <input name="brand"> 
-    <!-- needs input name ="brand" -->
+    Nick Name: <input name="name" value="{{ ramen.name }}">
+    Ramen Brand: <input name="brand" value="{{ramen.brand}}"> 
     <hr/>
 
 
@@ -84,9 +83,7 @@
     </div>
 
     <br/>
-    <button type="submit">Save-A-Ramen</button>
+    <button type="submit">Edit-My-Ramen</button>
 </form>
-
-
 
 {% endblock %}
