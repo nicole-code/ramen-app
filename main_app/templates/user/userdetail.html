@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div id="ramenbowl">RAMEN BOWL PICTURE HERE</div>
-
-<h1>hi I'm Built</h1> 
-
-<img src="">
-
-    Name: {{ ramen.name }}
-    <br/>
-    Brand: {{ ramen.brand }}
-    <hr/>
-    Ingredients: Some kind of code invoking ingredients as buttons.
-
-
-    <div id="edit-delete-btn">
-        <a href="/userprofile/{{ramen.id}}/delete/">Delete</a>
-        <a href="/buildramen/{{ramen.id}}/edit/">Edit</a>
+<div class="ramen-box">
+<img class="ramen-image" src="...">
+<br>
+<div class="ramen-container">
+<div class="ramen-card">
+    
+    <div class="ramen-body">
+      <h5 class="ramen-title">{{ ramen.name }}</h5>
+      <p class="ramen-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <hr>
+              <div class="ramen-action">
+            <a class="ramen-delete" href="/userprofile/{{ramen.id}}/delete/">Delete</a> 
+            <a class="ramen-edit"href="/buildramen/{{ramen.id}}/edit/">Edit</a>
+</div>
     </div>
+  </div>
+</div>
+        </div>
+
+
+
 
 {% endblock %}
