@@ -7,9 +7,9 @@
 
 <img src="">
 
-    Ramen Nickname: {{ ramen.name }}
+    Your Ramen's Name: {{ ramen.name }}
     <br/>
-    Brand: {{ ramen.brand }}
+    Your Instant Ramen Base: {{ ramen.brand }}
     <hr/>
     <h3>Ingredients</h3>
 
@@ -17,6 +17,7 @@
         <div class="card">
           <div class="card-content">
             <span class="card-title">
+             <img src='{{i.img}}'> 
               {{ i.name }}
             </span>
           </div>
