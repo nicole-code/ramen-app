@@ -6,12 +6,12 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Ramen, Ingredient
 
 # Define the home view
-def about(request):
-    return render(request, 'about.html')
-
 def home(request):
+    return render(request, 'home.html')
+
+def community_home(request):
     ramens =Ramen.objects.all()
-    return render(request, 'home.html', {'ramens':ramens})
+    return render(request, 'community/communityhome.html', {'ramens':ramens})
 
 def communitydetail(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
