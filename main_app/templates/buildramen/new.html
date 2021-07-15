@@ -1,30 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-<img id='bowl' src="../../static/image/RedRamenBlackBowl.png" width='373' height='373'>
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
-<img src="">
+<div id="ramenbuild">
+    <img id='bowl' src="../../static/image/RedRamenBlackBowl.png" width='373' height='373'>
+    <img class="ingredient" id="nori" src="../../static/image/layer/layer_nori.png" width='373' height='373'>
+    <img class="ingredient" id="mushrooms" src="../../static/image/layer/layer_mushroom.png" width='373' height='373'>
+    <img class="ingredient" id="fishball" src="../../static/image/layer/layer_fishball.png" width='373' height='373'>
+    <img class="ingredient" id="narutomaki" src="../../static/image/layer/layer_naruto.png" width='373' height='373'>
+    <img class="ingredient" id="porkbelly" src="../../static/image/layer/layer_pork-belly.png" width='373' height='373'>
+    <img class="ingredient" id="chicken" src="../../static/image/layer/layer_chicken-breast.png" width='373' height='373'>
+    <img class="ingredient" id="pepper" src="../../static/image/layer/layer_pepper.png" width='373' height='373'>
+    <img class="ingredient" id="tofu" src="../../static/image/layer/layer_tofu.png" width='373' height='373'>
+    <img class="ingredient" id="corn" src="../../static/image/layer/layer_corn.png" width='373' height='373'>
+    <img class="ingredient" id="egg" src="../../static/image/layer/layer_egg.png" width='373' height='373'>
+    <img class="ingredient" id="beansprouts" src="../../static/image/layer/layer_bransprout.png" width='373' height='373'>
+    <img class="ingredient" id="greenonion" src="../../static/image/layer/layer_green-onion.png" width='373' height='373'>
+</div>
 
 <div id="title">
 <h1>Create-A-Ramen!</h1> 
 </div>
 
 <div id="form">
-<form method="POST" action="/post/">
+<form method="POST" action="/post/" autocomplete="off">
     {% csrf_token %}
-    Name: <input name="name">
-    Ramen: <input name="brand"> 
+    Give Your Ramen A Nickname: <input name="name">
+    Tell Us What Instant Ramen Brand You're Using: <input name="brand"> 
     <!-- needs input name ="brand" -->
     <hr/>
 

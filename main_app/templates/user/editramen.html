@@ -10,75 +10,28 @@
 
 <form method="POST" action="/edit/{{ ramen.id }}">
     {% csrf_token %}
-    Nickname: <input name="name" value="{{ ramen.name }}">
-    Ramen Brand: <input name="brand" value="{{ramen.brand}}"> 
+
+    Your Ramen's Name: <input name="name" value="{{ ramen.name }}">
+    Your Instant Ramen Base: <input name="brand" value="{{ramen.brand}}"> 
+
     <hr/>
 
 
     Ingredients: 
     <br/>
     <div class="ingredients">
+      
+        {% for i in ingredients %}
+        
+        <img id='thumb' src='{{i.img}}' width='125' height="125">
 
-        <img src='../static/image/placeholder.png' width='125' height="125">
         <label class="switch">
-            <input type="checkbox" name="Corn" value="Corn">
-            <span class="slider round">Corn</span>
+            <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
+            <span class="slider round">{{i.name}}</span>
         </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-           <input type="checkbox" name="Chicken" value="Chicken">
-           <span class="slider round">Chicken</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Egg" value="Egg">
-            <span class="slider round">Egg</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Green Onion" value="Green Onion">
-            <span class="slider round">Green Onion</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Green Onion" value="Pork Belly">
-            <span class="slider round">Pork Belly</span>
-          </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-           <input type="checkbox" name="Nori" value="Nori">
-           <span class="slider round">Nori</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Narutomaki" value="Narutomaki">
-            <span class="slider round">Narutomaki</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Mushrooms" value="Mushrooms">
-            <span class="slider round">Mushrooms</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Bean Sprouts" value="Bean Sprouts">
-            <span class="slider round">Bean Sprouts</span>
-          </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-           <input type="checkbox" name="Tofu" value="Tofu">
-           <span class="slider round">Tofu</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Pepper" value="Pepper">
-            <span class="slider round">Pepper</span>
-        </label>
-        <img src='../static/image/placeholder.png' width='125' height="125">
-        <label class="switch">
-            <input type="checkbox" name="Fish Ball" value="Fish Ball">
-            <span class="slider round">Fish Ball</span>
-        </label>
+        
+        {% endfor %} 
+        
 
     </div>
 
