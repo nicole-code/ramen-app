@@ -1,26 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Build-A-Ramen Community</h1>
+<h1>Welcome to Noodly</h1>
 
-{% for r in ramens %}
+<br/>
 
-<div class="card">
-  <a href="community/{{ r.id }}">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="">
-  </div>
-  <div id="front" class="card-content">
-     User: {{ user.username }}
-     <hr/>
-    <span id="title" class="card-title activator grey-text text-darken-4">{{ r.name }}</span>
-    <hr/>
-  </div>
-  </div>
-</a>
-</div>
-
-{% endfor %}
-
+<img src="../static/image/ramen (1) 1ramenlogo.png">
 
 {% endblock %}
