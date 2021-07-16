@@ -17,6 +17,7 @@
     <img class="ingredient" id="greenonion" src="/static/image/layer/layer_green-onion.png" width='373' height='373'>
 </div>
 
+
 <h1>Edit</h1> 
 
 <img src="">
@@ -54,6 +55,13 @@
             </form>
 
 
+<h1 id="title">Edit My Ramen!</h1> 
+
+<form id="form" method="POST" action="/edit/{{ ramen.id }}">
+    {% csrf_token %}
+
+
+
 
 
 
@@ -65,6 +73,12 @@
 </div>
 
 
+
+    <br/>
+    <button type="submit">Edit-My-Ramen</button>
+</form>
+<br/>
+<br/>
 
 
 {% endblock %}
