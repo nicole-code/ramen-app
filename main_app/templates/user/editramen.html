@@ -18,39 +18,67 @@
 </div>
 
 
+<h1>Edit</h1> 
+
+<img src="">
+<!-- hidden jpgs will be layered here -->
+<div class="edit-ramen-container">
+    <div class="edit-ramen-card">
+        <div class="edit-ramen-form">
+
+            
+            <form method="POST" action="/edit/{{ ramen.id }}">
+                {% csrf_token %}
+                <p class="ramen-text">Your Ramen's Name:</p><input name="name" value="{{ ramen.name }}">
+                <p class="ramen-text">Your Instant Ramen Base:</p><input name="brand" value="{{ramen.brand}}"> 
+            
+                Ingredients: 
+                <br/>
+                <div class="edit-ramen-ingredients">
+                  
+                    {% for i in ingredients %}
+                    
+                    <img id='thumb' src='{{i.img}}' width='125' height="125">
+            
+                    <label class="switch">
+                        <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
+                        <span class="slider round">{{i.name}}</span>
+                    </label>
+                    
+                    {% endfor %} 
+                    
+            
+                </div>
+            
+                <br/>
+                <button type="submit">Edit-My-Ramen</button>
+            </form>
+
+
 <h1 id="title">Edit My Ramen!</h1> 
 
 <form id="form" method="POST" action="/edit/{{ ramen.id }}">
     {% csrf_token %}
 
-    Your Ramen's Name: <input name="name" value="{{ ramen.name }}">
-    Your Instant Ramen Base: <input name="brand" value="{{ramen.brand}}"> 
-
-    <hr/>
 
 
-    Ingredients: 
-    <br/>
-    <div class="ingredients">
-      
-        {% for i in ingredients %}
-        
-        <img id='thumb' src='{{i.img}}' width='125' height="125">
 
-        <label class="switch">
-            <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
-            <span class="slider round">{{i.name}}</span>
-        </label>
-        
-        {% endfor %} 
-        
 
+
+
+
+
+        </div>
     </div>
+</div>
+
+
 
     <br/>
     <button type="submit">Edit-My-Ramen</button>
 </form>
 <br/>
 <br/>
+
 
 {% endblock %}

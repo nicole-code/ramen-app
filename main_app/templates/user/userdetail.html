@@ -2,44 +2,45 @@
 {% block content %}
 
 <div class="ramen-box">
-<img class="ramen-image" src="...">
-<br>
-<div class="ramen-container">
-<div class="ramen-card">
-    
-    <div class="ramen-body">
-      <h5 class="ramen-title">{{ ramen.name }}</h5>
-      <p class="ramen-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <hr>
-              <div class="ramen-action">
-            <a class="ramen-delete" href="/userprofile/{{ramen.id}}/delete/">Delete</a> 
-            <a class="ramen-edit"href="/buildramen/{{ramen.id}}/edit/">Edit</a>
-</div>
-    </div>
-  </div>
-</div>
+    <img class="ramen-image" src="...">
+    <br>
+    <div class="ramen-container">
+        <div class="ramen-card">
+
+            <div class="ramen-body">
+                <p class="ramen-text">Your Ramen's Name:</p>
+                <h5 class="ramen-name">{{ ramen.name }}</h5>
+                <br>
+                <p class="ramen-text">Your Instant Ramen Base:</p>
+                <h5 class="ramen-base">{{ ramen.brand }}</h5>
+                <hr>
+                <p class="ramen-text">Ingredients:</p>
+                {% for i in all_ramen_ingredients %}
+                <div class="ingredient-card">
+                    <div class="ingredient-content">
+                        <span class="ingredient-title">
+                            <img src='{{ i.img }}'>
+                            {{ i.name }}
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr>
+
+
+                {% endfor %}
+
+                    <a class="ramen-edit" href="/buildramen/{{ramen.id}}/edit/"><i class="bi bi-pencil-fill" style="font-size:20px;"></i></a>&nbsp;&nbsp;&nbsp;
+                    <a class="ramen-delete" href="/userprofile/{{ramen.id}}/delete/"><i class="bi bi-trash" style="font-size:20px;"></i></a>
+
+            </div>
         </div>
-
-
-    Your Ramen's Name: {{ ramen.name }}
-    <br/>
-    Your Instant Ramen Base: {{ ramen.brand }}
-    <hr/>
-    Ingredients: 
-    {% for i in all_ramen_ingredients %}
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">
-         <img src='{{i.img}}'> 
-          {{ i.name }}
-        </span>
-      </div>
     </div>
-<br/>
-<br/>
+</div>
 
-
-{% endfor %}  
 
 
 {% endblock %}
