@@ -1,15 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div id="ramenbowl">RAMEN BOWL PICTURE HERE</div>
+<div class="ramen-box">
+    <img class="ramen-image" src="...">
+    <br>
+    <div class="ramen-container">
+        <div class="ramen-card">
+            {{ user.username }}
+            <div class="ramen-body">
+                
+                <p class="ramen-text">Ramen Name:</p>
+                <h5 class="ramen-name">{{ ramen.name }}</h5>
+                <br>
+                <p class="ramen-text">Ramen Base:</p>
+                <h5 class="ramen-base">{{ ramen.brand }}</h5>
+                <hr>
+                <p class="ramen-text">Ingredients:</p>
+                {% for i in all_ramen_ingredients %}
+                <div class="ingredient-card">
+                    <div class="ingredient-content">
+                        <span class="ingredient-title">
+                            <img src='{{ i.img }}'>
+                            {{ i.name }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+</div>
+</div>
+        </div>
+        </div>
+        </div>
 
-<h1>hi I'm Built</h1> 
 
-<img src="">
-    Name: {{ ramen.name }}
-    <br/>
-    Brand: {{ ramen.brand }}
-    <hr/>
-    Ingredients: Some kind of code invoking ingredients as buttons.
 
 {% endblock %}

@@ -1,42 +1,84 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div id="ramenbowl">RAMEN BOWL PICTURE HERE</div>
+<div id="ramenbuild">
+    <img id='bowl' src="/static/image/RedRamenBlackBowl.png" width='373' height='373'>
+    <img class="ingredient" id="nori" src="/static/image/layer/layer_nori.png" width='373' height='373'>
+    <img class="ingredient" id="mushrooms" src="/static/image/layer/layer_mushroom.png" width='373' height='373'>
+    <img class="ingredient" id="fishball" src="/static/image/layer/layer_fishball.png" width='373' height='373'>
+    <img class="ingredient" id="narutomaki" src="/static/image/layer/layer_naruto.png" width='373' height='373'>
+    <img class="ingredient" id="porkbelly" src="/static/image/layer/layer_pork-belly.png" width='373' height='373'>
+    <img class="ingredient" id="chicken" src="/static/image/layer/layer_chicken-breast.png" width='373' height='373'>
+    <img class="ingredient" id="pepper" src="/static/image/layer/layer_pepper.png" width='373' height='373'>
+    <img class="ingredient" id="tofu" src="/static/image/layer/layer_tofu.png" width='373' height='373'>
+    <img class="ingredient" id="corn" src="/static/image/layer/layer_corn.png" width='373' height='373'>
+    <img class="ingredient" id="egg" src="/static/image/layer/layer_egg.png" width='373' height='373'>
+    <img class="ingredient" id="beansprouts" src="/static/image/layer/layer_bransprout.png" width='373' height='373'>
+    <img class="ingredient" id="greenonion" src="/static/image/layer/layer_green-onion.png" width='373' height='373'>
+</div>
 
-<h1>hi build me </h1> 
+
+<h1>Edit</h1> 
 
 <img src="">
 <!-- hidden jpgs will be layered here -->
+<div class="edit-ramen-container">
+    <div class="edit-ramen-card">
+        <div class="edit-ramen-form">
 
-<form method="POST" action="/edit/{{ ramen.id }}">
+            
+            <form method="POST" action="/edit/{{ ramen.id }}">
+                {% csrf_token %}
+                <p class="ramen-text">Your Ramen's Name:</p><input name="name" value="{{ ramen.name }}">
+                <p class="ramen-text">Your Instant Ramen Base:</p><input name="brand" value="{{ramen.brand}}"> 
+            
+                Ingredients: 
+                <br/>
+                <div class="edit-ramen-ingredients">
+                  
+                    {% for i in ingredients %}
+                    
+                    <img id='thumb' src='{{i.img}}' width='50px' height="50px">
+            
+                    <label class="switch">
+                        <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
+                        <span class="slider round">{{i.name}}</span>
+                    </label>
+                    
+                    {% endfor %} 
+                    
+            
+                </div>
+            
+                <br/>
+                <button type="submit">Edit-My-Ramen</button>
+            </form>
+
+
+<h1 id="title">Edit My Ramen!</h1> 
+
+<form id="form" method="POST" action="/edit/{{ ramen.id }}">
     {% csrf_token %}
 
-    Your Ramen's Name: <input name="name" value="{{ ramen.name }}">
-    Your Instant Ramen Base: <input name="brand" value="{{ramen.brand}}"> 
-
-    <hr/>
 
 
-    Ingredients: 
-    <br/>
-    <div class="ingredients">
-      
-        {% for i in ingredients %}
-        
-        <img id='thumb' src='{{i.img}}' width='125' height="125">
 
-        <label class="switch">
-            <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
-            <span class="slider round">{{i.name}}</span>
-        </label>
-        
-        {% endfor %} 
-        
 
+
+
+
+
+        </div>
     </div>
+</div>
+
+
 
     <br/>
     <button class="btn" type="submit">Edit-My-Ramen</button>
 </form>
+<br/>
+<br/>
+
 
 {% endblock %}
