@@ -30,8 +30,16 @@ main {
 }
 
 /* header on home */
+#banner {
+    text-align: center;
+}
 
-
+#logo {
+    position: relative;
+    left: 700px;
+    height: 50px;
+    width: 50px;
+}
 /* Build a ramen bowl images */
 
 #bowl {
@@ -59,9 +67,7 @@ main {
     flex-direction: column;
 }
 
-#thumb {
-    filter: drop-shadow(0 10px 10px rgb(0, 0, 0, 0.5));    
-}
+
 /* The switch - the box around the slider */
 .switch {
     position: relative;
