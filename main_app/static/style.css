@@ -60,6 +60,7 @@ main {
     flex-direction: column;
 }
 
+/* THESE ARE BUTTON STYLES  */
 .btn {
     color: white !important;
 	text-transform: uppercase;
@@ -80,6 +81,7 @@ main {
 	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
 	transition: all 0.4s ease 0s;
 }
+/* END BUTTON STYLES */
 
 .ingredients_list {
     display: grid;
