@@ -26,29 +26,34 @@
     {% csrf_token %}
     Give Your Ramen A Nickname: <input name="name">
     Tell Us What Instant Ramen Brand You're Using: <input name="brand"> 
-    <!-- needs input name ="brand" -->
-    <hr/>
+  
+    <br>
+    <br>
 
-
-    Ingredients: 
+    Add Your Ingredients: 
     <br/>
-    <div class="ingredients">
+    <div class="ingredients-list">
 
         
         {% for i in ingredients %}
         
         <img id='thumb' src='{{i.img}}' width='125' height="125">
 
-        <label class="switch">
-            <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
-            <span class="slider round">{{i.name}}</span>
-        </label>
+        <div class="switch">
+            <label>
+              <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
+              <span class="lever"></span>
+              <span>{{i.name}}</span>
+            </label>
+        </div>    
         
         {% endfor %} 
     </div>
 
     <br/>
-    <button type="submit">Save-A-Ramen</button>
+    <button class="btn" type="submit">Save-A-Ramen</button>
+    <br/>
+    <br/>   
 </form>
 </div>
 
