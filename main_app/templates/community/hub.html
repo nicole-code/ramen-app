@@ -3,24 +3,29 @@
 
 <h1>Build-A-Ramen Community</h1>
 
-{% for r in ramens %}
 
-<div class="card">
-  <a href="community/{{ r.id }}">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="">
+<div class="container">
+<div class="row">
+  {% for r in ramens %}
+      <div class="col-md">
+        <a href="community/{{ r.id }}" class="hub">
+            <div class="card">
+                  <img class="card-image rounded-circle" src="">
+                      <div class="card-content">
+                          <div class="card-title" style="font-size:18px;">
+                              {{ user.username }}
+                              <hr/>
+                              <span id="title" class="card-title activator grey-text text-darken-4">{{ r.name }}</span>
+                          </div>
+                      </div>
+                  </div>
+                </a>
+              
+          </div>
+      {% endfor %}
   </div>
-  <div id="front" class="card-content">
-     User: {{ user.username }}
-     <hr/>
-    <span id="title" class="card-title activator grey-text text-darken-4">{{ r.name }}</span>
-    <hr/>
-  </div>
-  </div>
-</a>
 </div>
 
-{% endfor %}
 
 
 {% endblock %}
