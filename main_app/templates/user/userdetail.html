@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="ramen-box">
+
     <img class="ramen-image" src="/static/image/temporaryramenpic.png">
     <br>
     <div class="ramen-container">
@@ -16,16 +17,10 @@
                 <hr>
                 <p class="ramen-text">Ingredients:</p>
                 {% for i in all_ramen_ingredients %}
-                <div class="ingredient-card">
                     <div class="ingredient-content">
-                        <span class="ingredient-title">
-                            <img src='{{ i.img }}'>
+                            <img class="ingredient-image" src='{{ i.img }}'>
                             {{ i.name }}
-                        </span>
                     </div>
-                </div>
-                <br>
-                <br>
                 <br>
                 <br>
                 <hr>
@@ -39,7 +34,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
 
 

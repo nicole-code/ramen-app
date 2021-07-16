@@ -182,17 +182,11 @@ main {
     text-align: center;
 }
 
-.ramen-box {
-    padding: 40px;
-}
-
 .ramen-image {
     width: 273px;
     height: 273px;
     display: block;
     margin: auto;
-    padding: 0 0 20px 0;
-    border-radius: 50%;
 }
 
 .ramen-container {
@@ -205,7 +199,7 @@ main {
 }
 
 .ramen-card {
-    padding: 2px 16px;
+    padding: 2px 25px;
 }
 
 .ramen-delete:hover{
@@ -230,6 +224,12 @@ h5 {
 h1 {
     text-align: center;
 }
+
+img.ingredient-image {
+    width: 100px;
+    height: 100px;
+}
+
 
 
 /* USER LOGIN/SIGNUP */
@@ -278,6 +278,8 @@ h1 {
     padding: 20px;
 }
 
-#row {
-    display: inline;
+/* EDIT RAMEN PAGE */
+
+.save-action {
+    padding: 50px;
 }
