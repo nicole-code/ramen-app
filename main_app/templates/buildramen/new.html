@@ -22,39 +22,40 @@
 </div>
 
 <div id="form">
-<form method="POST" action="/post/" autocomplete="off">
-    {% csrf_token %}
+    <form method="POST" action="/post/" autocomplete="off">
+        {% csrf_token %}
     Give Your Ramen A Nickname: <input name="name">
     Tell Us What Instant Ramen Brand You're Using: <input name="brand"> 
   
-    <br>
-    <br>
+        <br>
+        <br>
 
     Add Your Ingredients: 
+        <br/>
+        <div class="ingredients-list">
+
+            {% for i in ingredients %}
+            
+            <div id="image">
+            <img style="display: block" id='thumb' src='{{i.img}}' width='125' height="125">
+
+                <div class="switch">
+                    <label>
+                        <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
+                        <span class="lever"></span>
+                        <span>{{i.name}}</span>
+                    </label>
+                </div>    
+            </div>    
+                {% endfor %} 
+        </div>
     <br/>
-    <div class="ingredients-list">
-
-        
-        {% for i in ingredients %}
-        
-        <img id='thumb' src='{{i.img}}' width='125' height="125">
-
-        <div class="switch">
-            <label>
-              <input type="checkbox" name="{{i.name}}" value="{{i.id}}">
-              <span class="lever"></span>
-              <span>{{i.name}}</span>
-            </label>
-        </div>    
-        
-        {% endfor %} 
-    </div>
-
-    <br/>
+    <div id="buttonwrapper">
     <button class="btn" type="submit">Save-A-Ramen</button>
+    </div>
     <br/>
     <br/>   
-</form>
+    </form>
 </div>
 
 {% endblock %}

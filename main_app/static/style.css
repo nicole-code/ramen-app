@@ -1,5 +1,6 @@
 body {
     font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -58,12 +59,17 @@ main {
 #form {
     display: flex;
     flex-direction: column;
+    padding: 50px;
+    font-size: 20px;
 }
 
 
 /* THESE ARE BUTTON STYLES  */
 
-
+#buttonwrapper {
+    display:flex;
+    justify-content: center;
+}
 
 .btn {
     color: white !important;
@@ -75,6 +81,7 @@ main {
 	display: inline-block;
 	border: none;
 	transition: all 0.4s ease 0s;
+    text-align: center;
 }
 
 .btn:hover {
@@ -88,23 +95,11 @@ main {
 
 /* END BUTTON STYLES */
 
-.ingredients_list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px 200px;
-  
+
+#image {
+    display:inline-block;
+    padding: 100px;
 }
-
-
-.ingredients_list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px 200px;
-
-
-
 
 /* FOR THE TOGGLE SWITCHES */
 
@@ -188,11 +183,10 @@ main {
 }
 
 .ramen-image {
-    width: 120px;
-    height: 120px;
+    width: 273px;
+    height: 273px;
     display: block;
     margin: auto;
-
 }
 
 .ramen-container {
@@ -283,7 +277,6 @@ img.ingredient-image {
 .signup-form {
     padding: 20px;
 }
-
 
 /* EDIT RAMEN PAGE */
 

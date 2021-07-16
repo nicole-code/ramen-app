@@ -15,7 +15,8 @@ def hub(request):
 
 def communitydetail(request, ramen_id):
     ramen = Ramen.objects.get(id=ramen_id)
-    return render(request, 'community/communitydetail.html', {'ramen': ramen})    
+    all_ramen_ingredients = ramen.ingredient.all()
+    return render(request, 'community/communitydetail.html', {'ramen': ramen, 'all_ramen_ingredients': all_ramen_ingredients})    
 
 def login_user(request):
     return render(request, 'registration/login.html')
