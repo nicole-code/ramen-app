@@ -78,8 +78,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ramenapp',
+<<<<<<< HEAD
         'USER': 'postgres',
         'PASSWORD': 'Ilovemy2boys',
+=======
+
+>>>>>>> d7e003d2faa13c9164ae61b1c3630f229863f8f7
    }
 }
 
