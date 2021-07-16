@@ -79,7 +79,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ramenapp',
-    
    }
 }
 
@@ -123,12 +122,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
+
 import django_heroku
-<<<<<<< HEAD
 django_heroku.settings(locals())
-=======
-django_heroku.settings(locals())
->>>>>>> 7e2415e7c6603894cfb3c2aae5aa0ac6e38876e6
-=======
->>>>>>> 5e5e6d1f70782b659bc28919b5544bc06c5bae56
+
