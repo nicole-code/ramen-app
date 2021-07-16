@@ -1,1 +1,1 @@
-web: gunicorn ramenapp.wsggit
+web: gunicorn ramenapp.wsgi
